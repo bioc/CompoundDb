@@ -92,6 +92,9 @@
 #' - `$<-`: replace or add a spectrum variable. Note that `mz`, `intensity` and
 #'   `spectrum_id` variables can not be replaced.
 #'
+#' - `spectraNames()`: returns the spectrum identifiers (content of the
+#'   *spectrum_id* database column).
+#'
 #' @name MsBackendCompDb
 #'
 #' @author Johannes Rainer
@@ -324,15 +327,6 @@ setReplaceMethod("$", "MsBackendCompDb", function(x, name, value) {
     if (name %in% c("spectrum_id"))
         stop("Spectra IDs can not be changed.", call. = FALSE)
     callNextMethod()
-})
-
-#' @rdname MsBackendCompDb
-#'
-#' @importMethodsFrom Spectra precScanNum
-#' @export
-setMethod("precScanNum", "MsBackendCompDb", function(object) {
-    message("precursor scan numbers not available")
-    rep(NA_integer_, length(object))
 })
 
 #' @importMethodsFrom ProtGenerics tic

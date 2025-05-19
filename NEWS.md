@@ -1,3 +1,9 @@
+# CompoundDb 1.12
+
+## Changes in version 1.12.1
+
+- Add support for `precScanNum()` method to `MsBackendCompDb`.
+
 # CompoundDb version 1.11
 
 ## Changes in version 1.11.2
